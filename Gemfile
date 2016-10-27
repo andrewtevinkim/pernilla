@@ -1,45 +1,65 @@
 source 'https://rubygems.org'
+ruby "2.0.0"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Rails 4.0.0 (K.I.S.S.)
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
+# server/db things
 gem 'sqlite3'
+# gem 'pg' # uncomment and implement postgres over sqlite 3 for maximum saving/loading speed
+gem 'thin'
+gem 'deploy', :git => 'git://github.com/eszyn/deploy.git'
+gem 'certified' # for weird Open SSL error at St. Oberholz
 
-# Use SCSS for stylesheets
+# Front-end shortcuts
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
+gem 'bootstrap-sass-rails'
+gem 'font-awesome-rails'
+gem 'coffee-rails' # CoffeeScript?
 gem 'uglifier', '>= 1.3.0'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+# Paginate
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+# Security
+gem 'bcrypt-ruby', '3.0.1'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+# Seeding
+gem 'faker', '1.0.1'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+# production/development/test-specific
+group :production do
+  gem 'therubyracer', platforms: :ruby
+end
+group :development, :test do
+  gem 'rspec-rails', "~> 2.14"
+  gem 'factory_girl_rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'email_spec'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# Authentication
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Kewl URLz
+gem 'friendly_id', '5.0.3'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+# Rename your app
+gem 'rename'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# Easy Mailer
+gem 'mail_view', "~> 2.0.4"
+gem 'premailer-rails'
+
+# Parsing
+gem 'nokogiri'

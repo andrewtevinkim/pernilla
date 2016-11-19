@@ -2,7 +2,9 @@ class UploadsController < ApplicationController
 
   def upload
 
-    # raise params.to_s
+    if !current_user.admin?
+      raise "A for effort, here is some renminbi."
+    end
 
     @folder1 = params[:folder1].to_s
 

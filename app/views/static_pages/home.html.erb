@@ -1,20 +1,27 @@
 <h1>hylo <3</h1>
 
+<% if user_signed_in? && current_user.admin? %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <p><%= link_to "send mp3", send_mp3_path %></p>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+<% else %>
 
-    <% if devise_mapping.rememberable? -%>
-      <%= f.check_box :remember_me, class: 'remember_me' %> <%= f.label :remember_me %>
-    <% end -%>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
 
-    <br/><small><%= link_to "Create an Account (confirmation needed)", new_user_registration_path, id: "need_account" %></small>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
 
-  <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+      <% if devise_mapping.rememberable? -%>
+        <%= f.check_box :remember_me, class: 'remember_me' %> <%= f.label :remember_me %>
+      <% end -%>
+
+      <br/><small><%= link_to "Create an Account (confirmation needed)", new_user_registration_path, id: "need_account" %></small>
+
+    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+
+  <% end %>
 
 <% end %>
 

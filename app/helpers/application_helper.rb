@@ -17,7 +17,6 @@ module ApplicationHelper
   # dir
 
   def dirs(directory)
-    # Dir.new(directory).select{|entry| File.directory? entry}
     Dir.glob(Rails.root.join(Rails.public_path, directory, "*")).select{|entry| File.directory? entry}.map{|filename| File.basename(filename)}
   end
 

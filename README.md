@@ -7,3 +7,7 @@ Apparently some strange men may have altered git so that you can't do something 
 Please, commit your changes or stash them before you can merge.`
 
 So rather than send tracks to Crumblove I thought I'd just create something new. Take that, terrorist scum!
+
+## Pernilla employees, unite!
+
+Anyone from Norway involved with Pernilla here in the United States please help this Norwegian brand get set up in Norge!

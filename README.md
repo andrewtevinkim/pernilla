@@ -1,4 +1,4 @@
-# Pernilla
+# AxFuze Pernilla
 
 Apparently some strange men may have altered git so that you can't do something locally on a server without something like:
 
@@ -11,3 +11,11 @@ So rather than send tracks to Crumblove I thought I'd just create something new.
 ## Pernilla employees, unite!
 
 Anyone from Norway involved with Pernilla here in the United States please help this Norwegian brand get set up in Norge!
+
+TO-DOs:
+1) Flat eq
+2) Help set up ATK Sound & Light
+
+*What if Max Martin was black? What if I am Cleopatra in male form?*
+
+http://www.csharpunity.com/LONDON.TXT

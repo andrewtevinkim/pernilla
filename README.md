@@ -8,7 +8,7 @@ Please, commit your changes or stash them before you can merge.`
 
 So rather than send tracks to Crumblove I thought I'd just create something new. Take that, terrorist scum!
 
-# Reset Mac OSX
+## Reset Mac OSX
 
 Cmd+Space > Terminal
 

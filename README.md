@@ -8,6 +8,12 @@ Please, commit your changes or stash them before you can merge.`
 
 So rather than send tracks to Crumblove I thought I'd just create something new. Take that, terrorist scum!
 
+# Reset Mac OSX
+
+Cmd+Space > Terminal
+
+`sudo killall coreaudiod`
+
 ## Pernilla employees, unite!
 
 Anyone from Norway involved with Pernilla here in the United States please help this Norwegian brand get set up in Norge!

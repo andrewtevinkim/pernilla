@@ -1,16 +1,6 @@
-Pernilla::Application.routes.draw do
+Rails.application.routes.draw do
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  devise_for :users
-  root 'static_pages#home'
-
-  get '/send_mp3', to: 'static_pages#send_mp3'
-
-  resources :uploads do
-    collection do
-      post 'upload'
-    end
-  end
-
-  resources :api, path: :api
-  
+  # Defines the root path route ("/")
+  root "static_pages#home"
 end

@@ -1,65 +1,72 @@
-source 'https://rubygems.org'
-ruby "2.0.0"
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Rails 4.0.0 (K.I.S.S.)
-gem 'rails', '4.0.0'
+ruby "2.7.0"
 
-# server/db things
-gem 'sqlite3'
-# gem 'pg' # uncomment and implement postgres over sqlite 3 for maximum saving/loading speed
-gem 'thin'
-gem 'deploy', :git => 'git://github.com/eszyn/deploy.git'
-gem 'certified' # for weird Open SSL error at St. Oberholz
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 
-# Front-end shortcuts
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass-rails'
-gem 'font-awesome-rails'
-gem 'coffee-rails' # CoffeeScript?
-gem 'uglifier', '>= 1.3.0'
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
 
-# Paginate
-gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate'
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
 
-# Security
-gem 'bcrypt-ruby', '3.0.1'
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", "~> 5.0"
 
-# Seeding
-gem 'faker', '1.0.1'
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
 
-# production/development/test-specific
-group :production do
-  gem 'therubyracer', platforms: :ruby
-end
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
+
+# Use Redis adapter to run Action Cable in production
+# gem "redis", "~> 4.0"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+# Use Sass to process CSS
+# gem "sassc-rails"
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
+
 group :development, :test do
-  gem 'rspec-rails', "~> 2.14"
-  gem 'factory_girl_rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
+
+group :development do
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
+end
+
 group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'email_spec'
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
-
-# Authentication
-gem 'devise'
-gem 'cancan'
-gem 'rolify'
-
-# Kewl URLz
-gem 'friendly_id', '5.0.3'
-
-# Rename your app
-gem 'rename'
-
-# Easy Mailer
-gem 'mail_view', "~> 2.0.4"
-gem 'premailer-rails'
-
-# Parsing
-gem 'nokogiri'

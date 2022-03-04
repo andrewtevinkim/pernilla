@@ -1,0 +1,45 @@
+pernilla_mp3_array = <%= raw @mp3_array %>;
+
+pernilla_music = {
+
+  "/": {
+      <% mp3s(Rails.public_path.to_s).sort.each_with_index do |mp3, i| %>
+        <%= i+1 %>: "<%= j raw mp3 %>",
+      <% end %>
+    },
+
+  <% dirs(Rails.public_path.to_s).sort.each do |dir| %>
+
+    "/<%= dir %>": {
+      <% mp3s(dir).sort.each_with_index do |mp3, i| %>
+        <%= i+1 %>: "<%= j raw mp3 %>",
+      <% end %>
+
+      <% dirs(Rails.public_path.to_s+"/"+dir).sort.each do |sub_dir| %>
+        "/<%= sub_dir %>": {
+          <% mp3s(Rails.public_path.to_s+"/"+dir+"/"+sub_dir).sort.each_with_index do |sub_mp3, j| %>
+            <%= j+1 %>: "<%= j raw sub_mp3 %>",
+          <% end %>
+
+          <% dirs(Rails.public_path.to_s+"/"+dir+"/"+sub_dir).sort.each do |sub_sub_dir| %>
+            "/<%= sub_sub_dir %>": {
+              <% mp3s(Rails.public_path.to_s+"/"+dir+"/"+sub_dir+"/"+sub_sub_dir).sort.each_with_index do |sub_sub_mp3, k| %>
+                <%= k+1 %>: "<%= j raw sub_sub_mp3 %>",
+              <% end %>
+
+              <% dirs(Rails.public_path.to_s+"/"+dir+"/"+sub_dir+"/"+sub_sub_dir).sort.each do |sub_sub_sub_dir| %>
+                "/<%= sub_sub_sub_dir %>": {
+                  <% mp3s(Rails.public_path.to_s+"/"+dir+"/"+sub_dir+"/"+sub_sub_dir+"/"+sub_sub_sub_dir).sort.each_with_index do |sub_sub_sub_mp3, l| %>
+                    <%= l+1 %>: "<%= j raw sub_sub_sub_mp3 %>",
+                  <% end %>
+                },
+              <% end %>
+            },
+          <% end %>
+        },
+      <% end %>
+    },
+
+  <% end %>
+
+};
